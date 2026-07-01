@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YKS Net Takip — Gizlilik &amp; Kullanım Koşulları</title>
+<meta name="description" content="YKS Net Takip mobil uygulaması için Gizlilik Politikası ve Kullanım Koşulları.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="container">
+    <div class="brand"><span class="dot"></span> YKS Net Takip</div>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="tr">TR</button>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="site-header">
+  <div class="container">
+    <div class="lang-block active" data-lang="tr">
+      <h1>Gizlilik Politikası &amp; Kullanım Koşulları</h1>
+      <p>YKS Net Takip uygulaması için yasal belgeler bu sayfada yer almaktadır.</p>
+    </div>
+    <div class="lang-block" data-lang="en">
+      <h1>Privacy Policy &amp; Terms of Use</h1>
+      <p>Legal documents for the YKS Net Takip mobile app are listed on this page.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <div class="card">
+      <div class="lang-block active" data-lang="tr">
+        <h2>YKS Net Takip Hakkında</h2>
+        <p>YKS Net Takip, YKS (TYT/AYT/YDT) sınavına hazırlanan öğrencilerin deneme sonuçlarını kaydedip net gelişimlerini takip etmelerini sağlayan, sade ve kullanımı kolay bir mobil uygulamadır.</p>
+      </div>
+      <div class="lang-block" data-lang="en">
+        <h2>About YKS Net Takip</h2>
+        <p>YKS Net Takip is a simple, easy-to-use mobile app that helps students preparing for Turkey's national university entrance exam (YKS) log their practice-test results and track their score progress over time.</p>
+      </div>
+    </div>
+
+    <div class="link-grid">
+      <a class="link-card" href="privacy-policy.html">
+        <span class="badge">Legal</span>
+        <h3 class="lang-block active" data-lang="tr">Gizlilik Politikası</h3>
+        <h3 class="lang-block" data-lang="en">Privacy Policy</h3>
+        <p class="lang-block active" data-lang="tr">Hangi verileri, neden ve nasıl işlediğimizi öğrenin.</p>
+        <p class="lang-block" data-lang="en">Learn what data we process, why, and how.</p>
+      </a>
+      <a class="link-card" href="terms-of-use.html">
+        <span class="badge">Legal</span>
+        <h3 class="lang-block active" data-lang="tr">Kullanım Koşulları</h3>
+        <h3 class="lang-block" data-lang="en">Terms of Use</h3>
+        <p class="lang-block active" data-lang="tr">Uygulamayı kullanırken kabul ettiğiniz kurallar.</p>
+        <p class="lang-block" data-lang="en">The rules you agree to when using the app.</p>
+      </a>
+    </div>
+
+    <div class="card" style="margin-top:24px;">
+      <div class="lang-block active" data-lang="tr">
+        <h2>İletişim</h2>
+        <p>Sorularınız için bize e-posta ile ulaşabilirsiniz:</p>
+      </div>
+      <div class="lang-block" data-lang="en">
+        <h2>Contact</h2>
+        <p>You can reach us by email for any questions:</p>
+      </div>
+      <div class="contact-box">
+        <strong>serifagir@icloud.com</strong>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="lang-block active" data-lang="tr">© 2026 AGR Apps — YKS Net Takip. Tüm hakları saklıdır.</div>
+  <div class="lang-block" data-lang="en">© 2026 AGR Apps — YKS Net Takip. All rights reserved.</div>
+</footer>
+
+<script>
+  const btns = document.querySelectorAll('.lang-btn');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.documentElement.lang = lang;
+      btns.forEach(b => b.classList.toggle('active', b === btn));
+      document.querySelectorAll('.lang-block').forEach(el => {
+        el.classList.toggle('active', el.dataset.lang === lang);
+      });
+      localStorage.setItem('ykslang', lang);
+    });
+  });
+  const saved = localStorage.getItem('ykslang');
+  if (saved) {
+    document.querySelector(`.lang-btn[data-lang="${saved}"]`)?.click();
+  }
+</script>
+
+</body>
+</html>
